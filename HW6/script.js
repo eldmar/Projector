@@ -5,7 +5,7 @@
 function iterativeOddSumTo(number) {
   // тут ваш код
   let sum = 0;
-  for (let i = 0; i <= number; i++) {
+  for (let i = 1; i <= number; i++) {
     if (i % 2 === 1) {
       sum += i;
     }
@@ -25,7 +25,7 @@ function recursiveOddSumTo(number) {
     return 1;
   } else {
     if (number % 2 === 1) {
-      return (number += recursiveOddSumTo(number - 1));
+      return (number += recursiveOddSumTo(number - 2));
     } else {
       return recursiveOddSumTo(number - 1);
     }
@@ -41,7 +41,7 @@ console.log(recursiveOddSumTo(10)); // 25
 const isXOEqual = (str) => {
   // тут ваш код
 
-  let dataArray = str.toLowerCase().split("");
+  let dataArray = str.toLowerCase();
   let countX = 0;
   let countO = 0;
   let targetX = "x";
@@ -56,11 +56,7 @@ const isXOEqual = (str) => {
       }
     }
   }
-  if (countX === countO) {
-    return true;
-  } else {
-    return false;
-  }
+  return countX === countO;
 };
 
 console.log(isXOEqual("ooxx")); // true
