@@ -54,7 +54,12 @@ let filteredNames = userNames.filter((currentValue) => {
 });
 
 let initialValue = [];
-let filteredNamesReduce = userNames.map((accumulator, currentValue) => {});
+let filteredNamesReduce = userNames.map((accumulator, currentValue) => {
+  if (vowelLetters.includes(currentValue[0])) {
+    return accumulator + currentValue;
+  }
+}, []);
 // тут ваш код...
 
 console.log(filteredNames); // ['Емма', 'Юстин', 'Ілля', 'Яна', 'Антон', 'Олена']
+console.log(filteredNamesReduce);
