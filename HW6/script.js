@@ -25,7 +25,7 @@ function recursiveOddSumTo(number) {
     return 1;
   } else {
     if (number % 2 === 1) {
-      return number + recursiveOddSumTo(number - 1);
+      return number + recursiveOddSumTo(number - 2);
     } else {
       return recursiveOddSumTo(number - 1);
     }
