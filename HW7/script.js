@@ -47,19 +47,57 @@ const userNames = [
   "Олена",
 ];
 let vowelLetters = ["А", "І", "О", "Е", "И", "Є", "Я", "Ю"];
-let filteredNames = userNames.filter((currentValue) => {
-  if (vowelLetters.includes(currentValue[0])) {
-    return currentValue;
+let filteredNames = userNames.filter((name) => {
+  if (vowelLetters.includes(name[0])) {
+    return name;
   }
 });
 
 let initialValue = [];
-let filteredNamesReduce = userNames.map((accumulator, currentValue) => {
+let filteredNamesReduce = userNames.reduce((accumulator, currentValue) => {
   if (vowelLetters.includes(currentValue[0])) {
-    return accumulator + currentValue;
+    accumulator.push(currentValue);
   }
+  return accumulator;
 }, []);
-// тут ваш код...
 
 console.log(filteredNames); // ['Емма', 'Юстин', 'Ілля', 'Яна', 'Антон', 'Олена']
 console.log(filteredNamesReduce);
+
+// 4 завдання
+
+const userFullNames = [
+  "Петрик Ольга Іванівна",
+  "Гнатюк Петро Антонович",
+  "Рудко Андрій Опанасович",
+];
+let initials = [];
+
+userFullNames.forEach((name) => {
+  let partOfName = name.split(" ");
+  let firstLetter = "";
+
+  partOfName.forEach((letter) => {
+    firstLetter += letter.charAt(0) + ".";
+    return firstLetter;
+  });
+
+  initials.push(firstLetter);
+});
+initials.sort();
+
+console.log(initials); // [ "Г.П.А.", "П.О.І.", "Р.А.О."]
+
+// 5 завдання
+
+let emptyArray = [];
+function sortArray(arr) {
+  if (arr === null || arr === undefined) {
+    return emptyArray;
+  } else {
+    return arr.sort((a, b) => a - b);
+  }
+}
+
+console.log(sortArray([1, 12, 10, 50, 5])); // поверне [1,5,10,12,50]
+console.log(sortArray(null)); // поверне []
