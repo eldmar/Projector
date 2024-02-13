@@ -76,10 +76,11 @@ let initials = userFullNames
   .map((value) => {
     const partOfName = value.split(" ");
 
-    const firstLetter = partOfName.map((letter) => {
-      return letter.charAt(0) + ".";
-    });
-    return firstLetter.join(" ");
+    return partOfName
+      .map((letter) => {
+        return letter.charAt(0) + ".";
+      })
+      .join(" ");
   })
   .sort();
 
@@ -90,10 +91,8 @@ console.log(initials); // [ "Г.П.А.", "П.О.І.", "Р.А.О."]
 function sortArray(arr) {
   if (arr === null || arr === undefined || arr.length === 0) {
     return [];
-  } else {
-    let copyArray = arr.slice();
-    return copyArray.sort((a, b) => a - b);
   }
+  return arr.slice().sort((a, b) => a - b);
 }
 
 console.log(sortArray([1, 12, 10, 50, 5])); // поверне [1,5,10,12,50]
