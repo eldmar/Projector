@@ -71,31 +71,28 @@ const userFullNames = [
   "Гнатюк Петро Антонович",
   "Рудко Андрій Опанасович",
 ];
-let initials = [];
 
-userFullNames.forEach((name) => {
-  let partOfName = name.split(" ");
-  let firstLetter = "";
+let initials = userFullNames
+  .map((value) => {
+    const partOfName = value.split(" ");
 
-  partOfName.forEach((letter) => {
-    firstLetter += letter.charAt(0) + ".";
-    return firstLetter;
-  });
-
-  initials.push(firstLetter);
-});
-initials.sort();
+    const firstLetter = partOfName.map((letter) => {
+      return letter.charAt(0) + ".";
+    });
+    return firstLetter.join(" ");
+  })
+  .sort();
 
 console.log(initials); // [ "Г.П.А.", "П.О.І.", "Р.А.О."]
 
 // 5 завдання
 
-let emptyArray = [];
 function sortArray(arr) {
-  if (arr === null || arr === undefined) {
-    return emptyArray;
+  if (arr === null || arr === undefined || arr.length === 0) {
+    return [];
   } else {
-    return arr.sort((a, b) => a - b);
+    let copyArray = arr.slice();
+    return copyArray.sort((a, b) => a - b);
   }
 }
 
