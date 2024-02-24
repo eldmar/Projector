@@ -41,3 +41,37 @@ function detonatorTimerRecursion(delay) {
     }
   }, 1000);
 }
+
+// 3 завдання
+
+let me = {
+  name: "Iaroslav",
+  residency: "Kyiv",
+  age: 34,
+  pet: "cat",
+  petName: "Leo",
+
+  introduce() {
+    console.log(`My name is ${this.name} and I live in ${this.residency}`);
+  },
+  prognose() {
+    console.log(`I hope that next year I'm gonna be ${this.age + 1}`);
+  },
+  petIntoduce() {
+    console.log(`Also i have a ${this.pet} and his name ${this.petName}`);
+  },
+};
+
+me.introduce();
+me.prognose();
+me.petIntoduce();
+
+// 4 завдання
+
+let securedSelfIntroduce = me.introduce.bind(me);
+let securedSelfPrognose = me.prognose.bind(me);
+let securedSelfPetIntroduce = me.petIntoduce.bind(me);
+
+setTimeout(securedSelfIntroduce, 1000); // виведе коректний результат
+setTimeout(securedSelfPrognose, 2000); // виведе коректний результат
+setTimeout(securedSelfPetIntroduce, 3000); // виведе коректний результат
