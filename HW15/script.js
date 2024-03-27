@@ -1,7 +1,5 @@
 "use strict";
 
-"use strict";
-
 class Sport {
   #equipment;
   constructor(name, players, time) {
