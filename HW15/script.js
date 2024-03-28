@@ -74,9 +74,6 @@ class Football extends TeamSport {
   #showStadium() {
     console.log(`The home stadium of ${this.teamName} is ${this.stadium}.`);
   }
-  numberOfPlayers() {
-    console.log(`This game is played by ${this.players} players.`);
-  }
 }
 
 class Basketball extends TeamSport {
@@ -101,8 +98,5 @@ class Basketball extends TeamSport {
 
   showMascot() {
     console.log(`The mascot of ${this.teamName} is ${this.mascot}.`);
-  }
-  numberOfPlayers() {
-    console.log(`This game is played by ${this.players} players.`);
   }
 }
